@@ -1,0 +1,12 @@
+.formSection{
+    background-color:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;   
+    height:50vh;
+}
+
+inputdiv{
+    height: 15rem;
+    width:2rem;
+}
