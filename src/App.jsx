@@ -15,12 +15,18 @@ import Myarrays from "./Myarray.jsx"
 import Welcome from "./Welcome.jsx"
 import Teacher from "./Teacher.jsx"
 import Ueffect from "./Ueffect.jsx"
-import Uref from "./Uref.jsx"
+import Uref from "./Uref.jsx";
+import FormExample from "./FormExample.jsx";
+import AppRouter from "./Router.jsx";
+import Home from "./Pages/Home.jsx";
 
 function App() {
   
   return(
       <> 
+
+
+      
         <Header/>
         <Footer/>
         <Food/>
@@ -62,6 +68,10 @@ function App() {
         {/* useRef */}
         <Uref/>
 
+        {/* Form Events */}
+        <FormExample/>
+
+ 
 
       </>
 
