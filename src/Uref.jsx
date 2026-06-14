@@ -7,7 +7,7 @@ function Uref(){
     // let [number, setNumber] = useState(0);
     // const ref = useRef(0);      //useRef returns an object,the object is "current"
     const inputRef = useRef(null); // --> this will create a ref object that we can attach to an input element
-    console.log(ref);
+    console.log(inputRef);
 
     useEffect(() => {
         console.log("Component rendered");
@@ -24,7 +24,7 @@ function Uref(){
     return(
         <div>
             <button onClick={handleClick}>Click Me!</button>
-            <input ref={input} /> // special attribute to reference the input element, u can access the input element using input.current
+            <input ref={inputRef} /> {/* special attribute to reference the input element, u can access the input element using inputRef.current */}
         </div>
      );
     

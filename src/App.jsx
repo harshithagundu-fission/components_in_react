@@ -1,3 +1,4 @@
+// displaying of routes in UI
 //this is the parent component. because, the components are rendered here(components are called here). 
 //also the parent component component will have the data (the names of the students are declared here)
 
@@ -17,13 +18,42 @@ import Teacher from "./Teacher.jsx"
 import Ueffect from "./Ueffect.jsx"
 import Uref from "./Uref.jsx";
 import FormExample from "./FormExample.jsx";
-import AppRouter from "./Router.jsx";
+import Profile from "./Pages/Profile.jsx";
 import Home from "./Pages/Home.jsx";
+import NotFound from "./Pages/NotFound.jsx";
+import { Routes, Route } from "react-router-dom";
+import Discuss from "./Pages/Discuss.jsx";
+import Contest from "./Pages/Contest.jsx";
+import NavBar from "./Pages/NavBar.jsx";
+import Problemset from "./Pages/Problemset.jsx";
 
 function App() {
   
   return(
       <> 
+
+        <NavBar/>
+
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+
+          <Route path="/problemset/:subjectName" Component={Problemset} />
+
+
+          {/* Discuss Layout */}
+          <Route path="/discuss" element={<Discuss />}>
+            <Route index element={<p>Select a discuss topic below.</p>} />
+            <Route path="interview-experience" element={<p>Interview experience</p>} />
+            <Route path="interview-question" element={<p>interview question</p>} />
+            <Route path="*" element={<div>Discuss Page not found</div>} />
+          </Route>
+
+          {/* Contest Layout */}
+          <Route path="/contest/:contestId/:userId?" element={<Contest />} />
+
+          <Route path="*" element={<NotFound />} />
+        </Routes>
 
 
       
@@ -70,9 +100,6 @@ function App() {
 
         {/* Form Events */}
         <FormExample/>
-
- 
-
       </>
 
   );
